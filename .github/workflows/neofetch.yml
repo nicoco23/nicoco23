@@ -1,4 +1,4 @@
-# Régénère assets/neofetch.svg avec tes vraies stats GitHub
+# Régénère le terminal (neofetch, projets, git log, cava) avec tes vraies stats GitHub
 name: neofetch
 
 on:
@@ -27,7 +27,9 @@ jobs:
           python-version: "3.12"
 
       - name: Générer le terminal
-        run: python scripts/neofetch.py
+        run: |
+          python scripts/neofetch.py
+          python scripts/sections.py
         env:
           # GH_STATS_TOKEN : token personnel (lecture seule) qui voit tes repos privés.
           # Sans lui, l'Action retombe sur le token par défaut → repos publics uniquement.
@@ -38,5 +40,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/neofetch.svg
+          git add -A assets README.md
           git diff --staged --quiet || (git commit -m "chore: maj neofetch" && git push)

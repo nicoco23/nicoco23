@@ -404,19 +404,35 @@ def build(d, now):
     s.idle_cursor(y, t)
     H = int(y + 28)
 
-    font_css = ""
+    return window(W, H, s.els, s.cursor_css, label="nico@42paris — neofetch", now=now)
+
+
+def font_face_css():
+    css = ""
     for w, f in ((400, "JBM-Regular.woff2"), (700, "JBM-Bold.woff2")):
         b64 = base64.b64encode((FONTS / f).read_bytes()).decode()
-        font_css += (f"@font-face{{font-family:JBM;font-weight:{w};"
-                     f"src:url(data:font/woff2;base64,{b64}) format('woff2')}}\n")
+        css += (f"@font-face{{font-family:JBM;font-weight:{w};"
+                f"src:url(data:font/woff2;base64,{b64}) format('woff2')}}\n")
+    return css
 
+
+def stamp_paris(now):
     try:
         from zoneinfo import ZoneInfo
-        stamp = now.astimezone(ZoneInfo("Europe/Paris")).strftime("%d/%m/%Y · %H:%M")
+        return now.astimezone(ZoneInfo("Europe/Paris")).strftime("%d/%m/%Y · %H:%M")
     except Exception:
-        stamp = now.strftime("%d/%m/%Y · %H:%M UTC")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="nico@42paris — neofetch">
-<title>nico@42paris — neofetch</title>
+        return now.strftime("%d/%m/%Y · %H:%M UTC")
+
+
+def window(w, h, els, extra_css=(), label="", title="nico@42paris: ~ — zsh",
+           now=None, bar=36, extra_style=""):
+    """Habille un contenu SVG dans une fenêtre de terminal (police, CRT, barre de titre)."""
+    r = 6 if bar >= 36 else 5
+    cy = bar / 2 + 0.5
+    right = (f'<text x="{w - 18}" y="{cy + 4.5:.1f}" text-anchor="end" class="sm" fill="{DIM}">'
+             f'maj {stamp_paris(now)}</text>') if now else ""
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{escape(label)}">
+<title>{escape(label)}</title>
 <defs>
   <filter id="glow" x="-5%" y="-20%" width="110%" height="140%">
     <feGaussianBlur stdDeviation="1.6" result="b"/>
@@ -429,10 +445,13 @@ def build(d, now):
     <stop offset="60%" stop-color="#000" stop-opacity="0"/>
     <stop offset="100%" stop-color="#000" stop-opacity=".35"/>
   </radialGradient>
-  <clipPath id="win"><rect width="{W}" height="{H}" rx="12"/></clipPath>
+  <linearGradient id="vert" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#00babc"/><stop offset="1" stop-color="#58a6ff"/>
+  </linearGradient>
+  <clipPath id="win"><rect width="{w}" height="{h}" rx="12"/></clipPath>
 </defs>
 <style>
-{font_css}text{{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:{FS}px;white-space:pre}}
+{font_face_css()}text{{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:{FS}px;white-space:pre}}
 .sm{{font-size:11.5px}}
 .logo{{font-weight:700;filter:url(#glow)}}
 .bar{{transform-box:fill-box;transform-origin:left center}}
@@ -442,20 +461,21 @@ def build(d, now):
 @keyframes pop{{from{{opacity:0}}to{{opacity:1}}}}
 @keyframes grow{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
 @keyframes blink{{0%,55%{{opacity:1}}56%,100%{{opacity:0}}}}
-{chr(10).join(s.cursor_css)}
+{extra_style}
+{chr(10).join(extra_css)}
 </style>
 <g clip-path="url(#win)" fill="{FG}">
-<rect width="{W}" height="{H}" fill="#0d1117"/>
-<rect width="{W}" height="36" fill="#161b22"/>
-<line x1="0" y1="36.5" x2="{W}" y2="36.5" stroke="#30363d"/>
-<circle cx="22" cy="18.5" r="6" fill="#ff5f56"/><circle cx="42" cy="18.5" r="6" fill="#ffbd2e"/><circle cx="62" cy="18.5" r="6" fill="#27c93f"/>
-<text x="{W / 2}" y="23" text-anchor="middle" class="sm" fill="{MUTED}">nico@42paris: ~ — zsh</text>
-<text x="{W - 18}" y="23" text-anchor="end" class="sm" fill="{DIM}">maj {stamp}</text>
-{chr(10).join(s.els)}
-<rect y="37" width="{W}" height="{H - 37}" fill="url(#scan)" pointer-events="none"/>
-<rect y="37" width="{W}" height="{H - 37}" fill="url(#vig)" pointer-events="none"/>
+<rect width="{w}" height="{h}" fill="#0d1117"/>
+<rect width="{w}" height="{bar}" fill="#161b22"/>
+<line x1="0" y1="{bar + .5}" x2="{w}" y2="{bar + .5}" stroke="#30363d"/>
+<circle cx="{r + 16}" cy="{cy}" r="{r}" fill="#ff5f56"/><circle cx="{3 * r + 24}" cy="{cy}" r="{r}" fill="#ffbd2e"/><circle cx="{5 * r + 32}" cy="{cy}" r="{r}" fill="#27c93f"/>
+<text x="{w / 2}" y="{cy + 4.5:.1f}" text-anchor="middle" class="sm" fill="{MUTED}">{escape(title)}</text>
+{right}
+{chr(10).join(els)}
+<rect y="{bar + 1}" width="{w}" height="{h - bar - 1}" fill="url(#scan)" pointer-events="none"/>
+<rect y="{bar + 1}" width="{w}" height="{h - bar - 1}" fill="url(#vig)" pointer-events="none"/>
 </g>
-<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="#30363d"/>
+<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="12" fill="none" stroke="#30363d"/>
 </svg>'''
 
 

@@ -4,17 +4,14 @@
 
 ### `$ ls ~/projets`
 
-| Projet | Description | Stack |
-|---|---|---|
-| [**ChooseMyCocktail**](https://github.com/nicoco23/ChooseMyCocktail) | Accords mets & boissons | Next.js · Express · SQLite |
-| [**qlcplus**](https://github.com/nicoco23/qlcplus) | Fork de QLC+ façon console ChamSys MagicQ, piloté à l'Akai APC mini | C++ · Qt |
-| **Altiora** | App mobile de productivité | React Native · Expo |
-| **ft_transcendence** | Projet final du tronc commun 42 | TypeScript |
+<!-- PROJECTS:START -->
+<p align="center">
+  <a href="https://github.com/nicoco23/ChooseMyCocktail"><img src="assets/projects/ChooseMyCocktail.svg" width="49%" alt="ChooseMyCocktail — App web d&#x27;accords mets &amp; boissons : Next.js, Express et SQLite."></a> <a href="https://github.com/nicoco23/qlcplus"><img src="assets/projects/qlcplus.svg" width="49%" alt="qlcplus — Fork de QLC+ restylé façon console ChamSys MagicQ, piloté à l&#x27;Akai APC mini."></a>
+</p>
+<!-- PROJECTS:END -->
 
-### `$ cat stack.txt`
-
-<p>
-  <img src="https://skillicons.dev/icons?i=c,java,spring,ts,react,nextjs,nodejs,express,sqlite,docker,git,linux&theme=dark&perline=12" alt="C, Java, Spring, TypeScript, React, Next.js, Node.js, Express, SQLite, Docker, Git, Linux">
+<p align="center">
+  <img src="assets/gitlog.svg" alt="git log — mes derniers commits" width="100%">
 </p>
 
 ### `$ ./contact.sh`
@@ -22,4 +19,8 @@
 <p>
   <a href="https://github.com/nicoco23"><img src="https://img.shields.io/badge/GitHub-nicoco23-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
   <a href="https://42.fr"><img src="https://img.shields.io/badge/42-Paris-00BABC?style=for-the-badge&logo=42&logoColor=white" alt="42 Paris"></a>
+</p>
+
+<p align="center">
+  <img src="assets/cava.svg" alt="cava — visualiseur audio" width="100%">
 </p>
