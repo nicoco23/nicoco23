@@ -27,8 +27,8 @@ from pathlib import Path
 # ═════════════════════════════════════════════════════════════ À PERSONNALISER
 INFO_STATIC = [  # lignes fixes de la partie neofetch (label, valeur)
     ("École", "42 Paris · Archi. en Techno. du Numérique"),
-    ("Rôle", "dev polyvalent · DJ · ingé lumière"),
-    ("Stack", "React · Next.js · Spring · C · Expo"),
+    ("Rôle", "dev polyvalent · Ingé lumière"),
+    ("Stack", "Java · React · Kotlin · C · Expo · VB.NET"),
 ]
 EXCLUDED_LANGS = {"HTML", "CSS", "SCSS", "Makefile", "Shell", "Dockerfile",
                   "Batchfile", "PowerShell", "CMake", "Roff"}

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/neofetch.svg" alt="nico@42paris — neofetch : Nicolas Tassin, étudiant à 42 Paris, dev polyvalent, DJ et ingénieur lumière" width="100%">
+  <img src="assets/neofetch.svg" alt="nico@42paris — neofetch : Nicolas Tassin, étudiant à 42 Paris, dev polyvalent, Ingénieur lumière" width="100%">
 </p>
 
 ### `$ ls ~/projets`
