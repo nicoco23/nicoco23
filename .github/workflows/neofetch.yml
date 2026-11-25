@@ -1,0 +1,42 @@
+# Régénère assets/neofetch.svg avec tes vraies stats GitHub
+name: neofetch
+
+on:
+  schedule:
+    - cron: "17 3 * * *"     # chaque nuit vers 4h, heure de Paris
+  workflow_dispatch:          # bouton « Run workflow » dans l'onglet Actions
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "assets/fonts/**"
+      - ".github/workflows/neofetch.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Générer le terminal
+        run: python scripts/neofetch.py
+        env:
+          # GH_STATS_TOKEN : token personnel (lecture seule) qui voit tes repos privés.
+          # Sans lui, l'Action retombe sur le token par défaut → repos publics uniquement.
+          GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN || github.token }}
+          GH_LOGIN: ${{ github.repository_owner }}
+
+      - name: Commit si changement
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/neofetch.svg
+          git diff --staged --quiet || (git commit -m "chore: maj neofetch" && git push)
