@@ -379,8 +379,8 @@ def build(d, now):
     legend = "".join(f'<rect x="{hx + 528 + i * 14}" y="{yl - 10}" width="10" height="10" rx="2" fill="{c}"/>'
                      for i, c in enumerate(HEAT))
     s.add(f'<g style="animation:in .4s {tl:.2f}s both">{legend}'
-          f'<text x="{hx + 486}" y="{yl}" class="sm" fill="{DIM}">moins</text>'
-          f'<text x="{hx + 602}" y="{yl}" class="sm" fill="{DIM}">plus</text></g>')
+          f'<text x="{hx + 486}" y="{yl}" class="sm" fill="{DIM}">Less</text>'
+          f'<text x="{hx + 602}" y="{yl}" class="sm" fill="{DIM}">More</text></g>')
     s.text(hx, yl, f'<tspan fill="{WHITE}" font-weight="700">{d["total"]}</tspan>'
                    f'<tspan fill="{MUTED}"> contributions sur les 12 derniers mois</tspan>', tl, cls="sm")
 
