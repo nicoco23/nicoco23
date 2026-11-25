@@ -12,6 +12,9 @@
     <stop offset="60%" stop-color="#000" stop-opacity="0"/>
     <stop offset="100%" stop-color="#000" stop-opacity=".35"/>
   </radialGradient>
+  <linearGradient id="vert" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#00babc"/><stop offset="1" stop-color="#58a6ff"/>
+  </linearGradient>
   <clipPath id="win"><rect width="960" height="553" rx="12"/></clipPath>
 </defs>
 <style>
@@ -27,6 +30,7 @@ text{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-s
 @keyframes pop{from{opacity:0}to{opacity:1}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+
 @keyframes c1{0.00%{transform:translateX(0.0px)}0.00%{transform:translateX(8.4px)}3.81%{transform:translateX(16.8px)}9.14%{transform:translateX(25.2px)}13.60%{transform:translateX(33.6px)}19.23%{transform:translateX(42.0px)}24.96%{transform:translateX(50.4px)}27.92%{transform:translateX(58.8px)}51.05%{transform:translateX(50.4px)}55.14%{transform:translateX(42.0px)}65.07%{transform:translateX(50.4px)}71.85%{transform:translateX(58.8px)}75.77%{transform:translateX(67.2px)}100%{transform:translateX(58.8px)}}
 @keyframes c2{0.00%{transform:translateX(0.0px)}0.00%{transform:translateX(8.4px)}8.05%{transform:translateX(16.8px)}13.32%{transform:translateX(25.2px)}20.53%{transform:translateX(33.6px)}25.83%{transform:translateX(42.0px)}32.00%{transform:translateX(50.4px)}43.03%{transform:translateX(58.8px)}49.18%{transform:translateX(67.2px)}56.55%{transform:translateX(75.6px)}62.10%{transform:translateX(84.0px)}68.81%{transform:translateX(92.4px)}75.14%{transform:translateX(100.8px)}100%{transform:translateX(92.4px)}}
 </style>
@@ -35,8 +39,8 @@ text{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-s
 <rect width="960" height="36" fill="#161b22"/>
 <line x1="0" y1="36.5" x2="960" y2="36.5" stroke="#30363d"/>
 <circle cx="22" cy="18.5" r="6" fill="#ff5f56"/><circle cx="42" cy="18.5" r="6" fill="#ffbd2e"/><circle cx="62" cy="18.5" r="6" fill="#27c93f"/>
-<text x="480.0" y="23" text-anchor="middle" class="sm" fill="#8b949e">nico@42paris: ~ — zsh</text>
-<text x="942" y="23" text-anchor="end" class="sm" fill="#6e7681">maj 25/11/2026 · 23:12</text>
+<text x="480.0" y="23.0" text-anchor="middle" class="sm" fill="#8b949e">nico@42paris: ~ — zsh</text>
+<text x="942" y="23.0" text-anchor="end" class="sm" fill="#6e7681">maj 25/11/2026 · 23:23</text>
 <text x="28.0" y="72.0" style="animation:in 0s 0.30s both"><tspan fill="#3fb950" font-weight="700">nico@42paris</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#c9d1d9">$</tspan></text>
 <text x="162.4" y="72" fill="#e6edf3" style="animation:in 0s 0.75s both">n</text>
 <text x="170.8" y="72" fill="#e6edf3" style="animation:in 0s 0.82s both">e</text>
@@ -62,7 +66,7 @@ text{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-s
 <text x="422.8" y="183.0" style="animation:up .35s ease-out 2.88s both"><tspan fill="#00babc" font-weight="700">Rôle     </tspan><tspan fill="#c9d1d9"> dev polyvalent · Ingé lumière</tspan></text>
 <text x="422.8" y="204.0" style="animation:up .35s ease-out 2.97s both"><tspan fill="#00babc" font-weight="700">Stack    </tspan><tspan fill="#c9d1d9"> Java · React · Kotlin · C · Expo · VB.NET</tspan></text>
 <text x="422.8" y="225.0" style="animation:up .35s ease-out 3.06s both"><tspan fill="#00babc" font-weight="700">Repos    </tspan><tspan fill="#c9d1d9"> 12 repos <tspan fill="#8b949e">(3 forks)</tspan> · 1 étoiles</tspan></text>
-<text x="422.8" y="246.0" style="animation:up .35s ease-out 3.15s both"><tspan fill="#00babc" font-weight="700">Activité </tspan><tspan fill="#c9d1d9"> 177 contributions / an · série <tspan fill="#e6edf3" font-weight="700">3 j</tspan></tspan></text>
+<text x="422.8" y="246.0" style="animation:up .35s ease-out 3.15s both"><tspan fill="#00babc" font-weight="700">Activité </tspan><tspan fill="#c9d1d9"> 178 contributions / an · série <tspan fill="#e6edf3" font-weight="700">3 j</tspan></tspan></text>
 <text x="422.8" y="267.0" style="animation:up .35s ease-out 3.24s both"><tspan fill="#00babc" font-weight="700">Dernier  </tspan><tspan fill="#c9d1d9"> <tspan fill="#e6edf3">leonidaRe</tspan><tspan fill="#8b949e"> · aujourd'hui</tspan></tspan></text>
 <g style="animation:up .35s ease-out 3.33s both"><rect x="422.8" y="282" width="24" height="12" rx="2" fill="#484f58"/><rect x="448.8" y="282" width="24" height="12" rx="2" fill="#ff7b72"/><rect x="474.8" y="282" width="24" height="12" rx="2" fill="#3fb950"/><rect x="500.8" y="282" width="24" height="12" rx="2" fill="#d29922"/><rect x="526.8" y="282" width="24" height="12" rx="2" fill="#58a6ff"/><rect x="552.8" y="282" width="24" height="12" rx="2" fill="#bc8cff"/><rect x="578.8" y="282" width="24" height="12" rx="2" fill="#00babc"/><rect x="604.8" y="282" width="24" height="12" rx="2" fill="#e6edf3"/></g>
 <text x="28.0" y="338.0" style="animation:in 0s 3.93s both"><tspan fill="#3fb950" font-weight="700">nico@42paris</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#c9d1d9">$</tspan></text>
@@ -143,9 +147,9 @@ text{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-s
 <g style="animation:pop .3s ease-out 7.17s both"><rect x="640.5" y="374.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-01</title></rect><rect x="640.5" y="386.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-02</title></rect><rect x="640.5" y="399.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-03</title></rect><rect x="640.5" y="411.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-04</title></rect><rect x="640.5" y="424.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-05</title></rect><rect x="640.5" y="436.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-06</title></rect><rect x="640.5" y="449.0" width="10" height="10" rx="2" fill="#0a4446"><title>1 le 2026-11-07</title></rect></g>
 <g style="animation:pop .3s ease-out 7.19s both"><rect x="653.0" y="374.0" width="10" height="10" rx="2" fill="#0a4446"><title>2 le 2026-11-08</title></rect><rect x="653.0" y="386.5" width="10" height="10" rx="2" fill="#057a7c"><title>3 le 2026-11-09</title></rect><rect x="653.0" y="399.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-10</title></rect><rect x="653.0" y="411.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-11</title></rect><rect x="653.0" y="424.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-12</title></rect><rect x="653.0" y="436.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-13</title></rect><rect x="653.0" y="449.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-14</title></rect></g>
 <g style="animation:pop .3s ease-out 7.22s both"><rect x="665.5" y="374.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-15</title></rect><rect x="665.5" y="386.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-16</title></rect><rect x="665.5" y="399.0" width="10" height="10" rx="2" fill="#0a4446"><title>2 le 2026-11-17</title></rect><rect x="665.5" y="411.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-18</title></rect><rect x="665.5" y="424.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-19</title></rect><rect x="665.5" y="436.5" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-20</title></rect><rect x="665.5" y="449.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-21</title></rect></g>
-<g style="animation:pop .3s ease-out 7.24s both"><rect x="678.0" y="374.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-22</title></rect><rect x="678.0" y="386.5" width="10" height="10" rx="2" fill="#0a4446"><title>2 le 2026-11-23</title></rect><rect x="678.0" y="399.0" width="10" height="10" rx="2" fill="#5cf2f4"><title>7 le 2026-11-24</title></rect><rect x="678.0" y="411.5" width="10" height="10" rx="2" fill="#057a7c"><title>4 le 2026-11-25</title></rect></g>
+<g style="animation:pop .3s ease-out 7.24s both"><rect x="678.0" y="374.0" width="10" height="10" rx="2" fill="#161b22"><title>0 le 2026-11-22</title></rect><rect x="678.0" y="386.5" width="10" height="10" rx="2" fill="#0a4446"><title>2 le 2026-11-23</title></rect><rect x="678.0" y="399.0" width="10" height="10" rx="2" fill="#5cf2f4"><title>7 le 2026-11-24</title></rect><rect x="678.0" y="411.5" width="10" height="10" rx="2" fill="#00b3b5"><title>5 le 2026-11-25</title></rect></g>
 <g style="animation:in .4s 7.26s both"><rect x="556" y="469.5" width="10" height="10" rx="2" fill="#161b22"/><rect x="570" y="469.5" width="10" height="10" rx="2" fill="#0a4446"/><rect x="584" y="469.5" width="10" height="10" rx="2" fill="#057a7c"/><rect x="598" y="469.5" width="10" height="10" rx="2" fill="#00b3b5"/><rect x="612" y="469.5" width="10" height="10" rx="2" fill="#5cf2f4"/><text x="514" y="479.5" class="sm" fill="#6e7681">Less</text><text x="630" y="479.5" class="sm" fill="#6e7681">More</text></g>
-<text x="28.0" y="479.5" class="sm" style="animation:up .35s ease-out 7.26s both"><tspan fill="#e6edf3" font-weight="700">177</tspan><tspan fill="#8b949e"> contributions sur les 12 derniers mois</tspan></text>
+<text x="28.0" y="479.5" class="sm" style="animation:up .35s ease-out 7.26s both"><tspan fill="#e6edf3" font-weight="700">178</tspan><tspan fill="#8b949e"> contributions sur les 12 derniers mois</tspan></text>
 <text x="720.5" y="366.0" class="sm" style="animation:in .3s 6.09s both"><tspan fill="#6e7681">langages</tspan></text>
 <text x="720.5" y="383.0" class="sm" style="animation:up .35s ease-out 6.29s both"><tspan fill="#c9d1d9">C++</tspan></text>
 <rect x="812.9" y="375.0" width="75.1" height="8" rx="2" fill="#161b22" style="animation:in .3s 6.29s both"/>

@@ -6,7 +6,7 @@
 
 <!-- PROJECTS:START -->
 <p align="center">
-  <a href="https://github.com/nicoco23/ChooseMyCocktail"><img src="assets/projects/ChooseMyCocktail.svg" width="49%" alt="ChooseMyCocktail — App web d&#x27;accords mets &amp; boissons : Next.js, Express et SQLite."></a> <a href="https://github.com/nicoco23/qlcplus"><img src="assets/projects/qlcplus.svg" width="49%" alt="qlcplus — Fork de QLC+ restylé façon console ChamSys MagicQ, piloté à l&#x27;Akai APC mini."></a>
+  <a href="https://github.com/nicoco23/qlcplus"><img src="assets/projects/qlcplus.svg" width="49%" alt="qlcplus — Fork de QLC+ restylé façon console ChamSys MagicQ, piloté à l&#x27;Akai APC mini."></a>
 </p>
 <!-- PROJECTS:END -->
 
