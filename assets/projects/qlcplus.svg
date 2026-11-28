@@ -108,7 +108,7 @@ text{font-family:JBM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-s
 <rect x="20" y="124" width="430" height="8" rx="4" fill="#161b22"/>
 <clipPath id="bar"><rect x="20" y="124" width="430" height="8" rx="4"/></clipPath><g clip-path="url(#bar)"><g class="bar" style="animation:grow .9s cubic-bezier(.2,.8,.2,1) 1.80s both"><rect x="20.0" y="124" width="290.8" height="8" fill="#f34b7d"/><rect x="310.8" y="124" width="69.9" height="8" fill="#44a51c"/><rect x="380.7" y="124" width="29.5" height="8" fill="#e34c26"/><rect x="410.2" y="124" width="22.0" height="8" fill="#f1e05a"/><rect x="432.2" y="124" width="17.8" height="8" fill="#30363d"/></g></g>
 <g style="animation:in .4s 2.10s both"><text x="20" y="150" class="xs"><tspan fill="#f34b7d">●</tspan><tspan fill="#c9d1d9"> C++ 68%</tspan></text><text x="92.6" y="150" class="xs"><tspan fill="#44a51c">●</tspan><tspan fill="#c9d1d9"> QML 16%</tspan></text><text x="165.2" y="150" class="xs"><tspan fill="#e34c26">●</tspan><tspan fill="#c9d1d9"> HTML 7%</tspan></text><text x="237.79999999999998" y="150" class="xs"><tspan fill="#f1e05a">●</tspan><tspan fill="#c9d1d9"> JavaScript 5%</tspan></text></g>
-<text x="20" y="174" class="xs" fill="#6e7681" style="animation:in .4s 2.30s both">0 étoile · maj aujourd&#x27;hui</text>
+<text x="20" y="174" class="xs" fill="#6e7681" style="animation:in .4s 2.30s both">0 étoile · maj hier</text>
 <text x="450" y="174" class="xs" text-anchor="end" fill="#00babc" style="animation:in .4s 2.40s both">ouvrir →</text>
 <rect y="31" width="470" height="161" fill="url(#scan)" pointer-events="none"/>
 <rect y="31" width="470" height="161" fill="url(#vig)" pointer-events="none"/>
